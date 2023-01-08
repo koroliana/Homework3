@@ -9,6 +9,12 @@ public class Main {
         task5();
         task6();
         task7();
+
+        task11();
+        task12();
+        task13();
+        task14();
+        task15();
     }
 
     public static void task1() {
@@ -137,11 +143,18 @@ public class Main {
 
     public static void task7() {
         System.out.println("Условные операторы. Задача №7");
-        System.out.println("Введите 3 числа");
+        System.out.println("Введите 3 числа или напишите \"пропустить\"");
         Scanner scanner = new Scanner(System.in);
-        int one = Integer.parseInt(scanner.nextLine());
-        int two = Integer.parseInt(scanner.nextLine());
-        int three = Integer.parseInt(scanner.nextLine());
+        int [] numbers = new int[3];
+        for (int i = 0; i<numbers.length; i++) {
+            String s = scanner.nextLine();
+            if (s.equals("пропустить")||s.equals("Пропустить")) {
+                break;
+            } else numbers[i] = Integer.parseInt(s);
+        }
+        int one = numbers[0];
+        int two = numbers[1];
+        int three = numbers[2];
         int max = one;
         if (max < two) {
             max = two;
@@ -156,5 +169,108 @@ public class Main {
         System.out.println();
     }
 
+    public static void task11() {
+        System.out.println("Условные операторы. Часть 2. Задача №1");
+        byte clientOS = 1;
+        switch (clientOS)
+        {
+            case 0:
+                System.out.println("Установите версию приложения для iOS по ссылке");
+                break;
+            case 1:
+                System.out.println("Установите версию приложения для Android по ссылке");
+                break;
+            default:
+                System.out.println("Для вашей операционной системы пока нет приложения");
+        }
+        System.out.println();
+    }
 
+    public static void task12() {
+        System.out.println("Условные операторы. Часть 2. Задача №2");
+        byte clientOS = 1;
+        int clientDeviceYear = 2015;
+        if (clientDeviceYear >= 2015 && clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientDeviceYear >= 2015 && clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (clientOS == 0) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientOS == 1) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else System.out.println("Для вашей операционной системы пока нет приложения");
+        System.out.println();
+    }
+
+    public static void task13() {
+        System.out.println("Условные операторы. Часть 2. Задача №3");
+        int year1 = 2000;
+        int year2 = 1800;
+        int year3 = 1990;
+        int year4 = 2024;
+        isLeapYear(year1);
+        isLeapYear(year2);
+        isLeapYear(year3);
+        isLeapYear(year4);
+
+        System.out.println();
+    }
+
+    public static void isLeapYear(int year) {
+
+        if(year % 400 == 0) {
+            System.out.println("Год " + year + " високосный");
+        }
+        else if(year % 100 == 0) {
+            System.out.println("Год " + year + " невисокосный");
+        }
+        else if(year % 4 == 0) {
+            System.out.println("Год " + year + " високосный");
+        }
+        else System.out.println("Год " + year + " невисокосный");
+    }
+
+    public static void task14() {
+        System.out.println("Условные операторы. Часть 2. Задача №4");
+        int deliveryDistance = 95;
+        if (deliveryDistance <= 20) {
+            System.out.println("Для доставки потребуется 1 день");
+        } else if (deliveryDistance <= 60) {
+            System.out.println("Для доставки потребуется 2 дня");
+        } else if (deliveryDistance <= 100) {
+            System.out.println("Для доставки потребуется 3 дня");
+        } else System.out.println("Извините, в ваш район доставка не предусмотрена");
+        System.out.println();
+    }
+
+    public static void task15() {
+        System.out.println("Условные операторы. Часть 2. Задача №5");
+        byte monthNumber = 12;
+        switch (monthNumber)
+        {
+            case 1:
+            case 2:
+            case 12:
+                System.out.println(monthNumber + "-й месяц - это зима");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println(monthNumber + "-й месяц - это весна");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println(monthNumber + "-й месяц - это лето");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println(monthNumber + "-й месяц - это осень");
+                break;
+            default:
+                System.out.println("Нет такого месяца");
+        }
+        System.out.println();
+    }
 }

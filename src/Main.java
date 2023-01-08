@@ -6,7 +6,7 @@ public class Main {
     }
 
     public static void task1() {
-        System.out.println("Условные операторы. Задача 1");
+        System.out.println("Условные операторы. Задача №1");
         int age1 = 15;
         int age2 = 28;
         checkAge(age1);
@@ -21,7 +21,7 @@ public class Main {
     }
 
     public static void task2() {
-        System.out.println("Условные операторы. Задача 2");
+        System.out.println("Условные операторы. Задача №2");
         int temp1 = -5;
         int temp2 = 28;
         checkTemp(temp1);
@@ -37,7 +37,7 @@ public class Main {
     }
 
     public static void task3() {
-        System.out.println("Условные операторы. Задача 3");
+        System.out.println("Условные операторы. Задача №3");
         int speed1 = 60;
         int speed2 = 100;
         checkSpeed(speed1);
